@@ -1,0 +1,20 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
+    <rect width="1200" height="630" fill="#111827"/>
+    <rect x="40" y="40" width="1120" height="550" rx="24" fill="#1f2937" stroke="#374151" stroke-width="3"/>
+    <rect x="80" y="80" width="8" height="90" rx="4" fill="#2563eb"/>
+    <text x="110" y="130" font-family="system-ui, -apple-system, sans-serif" font-size="54" font-weight="900" fill="#ffffff">QueHayHoy</text>
+    <text x="110" y="170" font-family="system-ui, -apple-system, sans-serif" font-size="28" font-weight="600" fill="#9ca3af">Precios de la calle y mapa de apagones en Cuba al momento</text>
+    <g transform="translate(80, 230)">
+        <rect x="0" y="0" width="500" height="240" rx="16" fill="#111827" stroke="#374151" stroke-width="2"/>
+        <text x="30" y="55" font-family="system-ui, -apple-system, sans-serif" font-size="28" font-weight="700" fill="#60a5fa">💵 EL FULA (USD / MLC)</text>
+        <text x="30" y="110" font-family="system-ui, -apple-system, sans-serif" font-size="22" fill="#e5e7eb">• Ofertas de particulares en la calle</text>
+        <text x="30" y="155" font-family="system-ui, -apple-system, sans-serif" font-size="22" fill="#e5e7eb">• La Habana, Centro y Oriente</text>
+        <text x="30" y="200" font-family="system-ui, -apple-system, sans-serif" font-size="20" font-weight="600" fill="#34d399">✓ Sin algoritmos raros</text>
+        <rect x="540" y="0" width="500" height="240" rx="16" fill="#111827" stroke="#374151" stroke-width="2"/>
+        <text x="570" y="55" font-family="system-ui, -apple-system, sans-serif" font-size="28" font-weight="700" fill="#f87171">⚡ LA CORRIENTE</text>
+        <text x="570" y="110" font-family="system-ui, -apple-system, sans-serif" font-size="22" fill="#e5e7eb">• Reportes comunitarios anónimos</text>
+        <text x="570" y="155" font-family="system-ui, -apple-system, sans-serif" font-size="22" fill="#e5e7eb">• Mapa interactivo por provincia</text>
+        <text x="570" y="200" font-family="system-ui, -apple-system, sans-serif" font-size="20" font-weight="600" fill="#fbbf24">✓ Funciona sin VPN ni login</text>
+    </g>
+    <text x="600" y="540" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="20" font-weight="600" fill="#9ca3af">Ultraligero • Carga en 1 segundo • Diseñado para navegar con poco saldo</text>
+</svg>

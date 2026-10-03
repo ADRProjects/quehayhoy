@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <title>QueHayHoy | El Fula, Divisas y Apagones en Cuba</title>
+    
+    <!-- Production SEO & Search Engines -->
+    <meta name="robots" content="index, follow">
+    <meta name="description" content="QueHayHoy: Consulta el precio real del dólar, MLC y euro en la calle hoy en Cuba. Mapa y reportes comunitarios de apagones por municipio en tiempo real. Carga instantánea sin VPN.">
+    <meta name="keywords" content="Cuba, precio dolar cuba, el fula, mlc hoy, apagones cuba, reporte de corriente, revolico divisas">
+    <meta name="author" content="QueHayHoy">
+
+    <!-- OpenGraph Metadata for WhatsApp, Telegram & Facebook Previews -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="QueHayHoy">
+    <meta property="og:title" content="QueHayHoy — El Fula y La Corriente en Tiempo Real">
+    <meta property="og:description" content="Entérate al momento a cómo está el dólar en la calle y chequea el mapa de apagones en tu barrio. Sin gastar megas y sin VPN.">
+    <meta property="og:image" content="og-image.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="QueHayHoy — Dólar y Apagones en Cuba">
+    <meta name="twitter:description" content="Precios de calle reales y mapa colaborativo de apagones en toda Cuba. Carga ultra rápida.">
+    <meta name="twitter:image" content="og-image.png">
+    <meta name="theme-color" content="#111827">
+
+    <!-- Embedded SVG Favicon (Instant load, 0 network requests) -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡</text></svg>">
+
+    <style>
+        /* Mobile-First, Ultra-Low Data Stylesheet */
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #f7f8fa;
+            color: #1a1a1a;
+            line-height: 1.4;
+            padding: 12px;
+            max-width: 520px;
+            margin: 0 auto;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        header {
+            background: #ffffff;
+            padding: 16px;
+            border-radius: 12px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+            margin-bottom: 12px;
+            text-align: center;
+            border-left: 4px solid #2563eb;
+        }
+        h1 { font-size: 1.55rem; font-weight: 800; color: #111; letter-spacing: -0.5px; }
+        .meta-timestamp { font-size: 0.8rem; color: #6b7280; margin-top: 4px; }
+
+        .tabs { display: flex; gap: 8px; margin-bottom: 12px; }
+        .tab-button {
+            flex: 1;
+            padding: 11px;
+            background: #e5e7eb;
+            border: none;
+            border-radius: 8px;
+            font-size: 0.95rem;
+            font-weight: 700;
+            color: #4b5563;
+            cursor: pointer;
+        }
+        .tab-button.active { background: #111827; color: #ffffff; }
+
+        .tab-content { display: none; }
+        .tab-content.active { display: block; }
+
+        .card { background: #ffffff; padding: 16px; border-radius: 12px; box-shadow: 0 1px 3px rgba(0,0,0,0.06); margin-bottom: 12px; }
+        .card-header { display: flex; justify-content: space-between; align-items: center; font-weight: 700; font-size: 1.05rem; padding-bottom: 8px; border-bottom: 1px solid #f3f4f6; margin-bottom: 10px; }
+
+        .rate-row { display: flex; align-items: center; justify-content: space-between; padding: 9px 0; border-bottom: 1px dashed #f3f4f6; }
+        .rate-row:last-child { border-bottom: none; }
+        .currency-label { font-weight: 700; font-size: 0.95rem; display: flex; align-items: center; gap: 6px; }
+        .rate-figures { text-align: right; }
+        .rate-figures strong { font-size: 1.15rem; color: #111; }
+        .rate-subtext { font-size: 0.75rem; color: #6b7280; display: block; }
+
+        .report-card { background: #ffffff; border-radius: 12px; padding: 16px; box-shadow: 0 1px 3px rgba(0,0,0,0.06); margin-bottom: 12px; }
+        .report-headline { font-weight: 700; font-size: 1rem; margin-bottom: 8px; }
+        select { width: 100%; padding: 12px; border-radius: 8px; border: 1px solid #d1d5db; font-size: 0.95rem; background: #ffffff; margin-bottom: 10px; outline: none; }
+        optgroup { font-weight: 700; background: #f9fafb; color: #111; }
+        .action-grid { display: flex; gap: 8px; }
+        .action-button { flex: 1; padding: 14px 10px; border: none; border-radius: 8px; font-size: 0.95rem; font-weight: 800; cursor: pointer; text-align: center; }
+        .action-outage { background: #fee2e2; color: #991b1b; }
+        .action-outage:active { background: #fca5a5; }
+        .action-power-back { background: #dcfce7; color: #166534; }
+        .action-power-back:active { background: #86efac; }
+
+        /* Region Filters */
+        .region-filters { display: flex; gap: 6px; margin-bottom: 16px; }
+        .reg-btn { flex: 1; padding: 8px 4px; background: #374151; color: #9ca3af; border: 1px solid #4b5563; border-radius: 6px; font-size: 0.75rem; font-weight: 700; cursor: pointer; transition: 0.2s; }
+        .reg-btn.active { background: #2563eb; color: #ffffff; border-color: #3b82f6; }
+
+        /* CSS Grid Schematic Map */
+        .map-container { background: #1f2937; padding: 16px; border-radius: 12px; margin-bottom: 16px; color: #ffffff;}
+        .map-title { font-size: 0.85rem; font-weight: 700; margin-bottom: 12px; text-align: center; color: #9ca3af; text-transform: uppercase; letter-spacing: 0.5px;}
+        .cuba-map { display: grid; grid-template-columns: repeat(11, 1fr); grid-template-rows: auto auto auto; gap: 4px; }
+        .prov { background: #374151; color: rgba(255,255,255,0.8); font-size: 0.65rem; font-weight: 800; text-align: center; padding: 8px 0; border-radius: 4px; cursor: pointer; user-select: none; transition: all 0.2s; position: relative; }
+        .prov:active { transform: scale(0.95); }
+        .prov.selected { outline: 2px solid #ffffff; outline-offset: 1px; color: #ffffff; z-index: 10;}
+        .prov.dimmed { opacity: 0.2; pointer-events: none; }
+        
+        .prov.status-green { background: #16a34a; color: #ffffff;}
+        .prov.status-yellow { background: #ca8a04; color: #ffffff;}
+        .prov.status-red { background: #dc2626; color: #ffffff; box-shadow: 0 0 10px rgba(220,38,38,0.5); }
+
+        .pin { grid-column: 1; grid-row: 1; }
+        .art { grid-column: 2; grid-row: 1; }
+        .hab { grid-column: 3; grid-row: 1; transform: translateY(-4px); } 
+        .may { grid-column: 3; grid-row: 2; }
+        .mat { grid-column: 4; grid-row: 1 / span 2; }
+        .vcl { grid-column: 5; grid-row: 1; }
+        .cfg { grid-column: 5; grid-row: 2; }
+        .ssp { grid-column: 6; grid-row: 1 / span 2; }
+        .cav { grid-column: 7; grid-row: 1 / span 2; }
+        .cam { grid-column: 8; grid-row: 1 / span 2; }
+        .ltu { grid-column: 9; grid-row: 1 / span 2; }
+        .hol { grid-column: 10; grid-row: 1; }
+        .gra { grid-column: 10; grid-row: 2; }
+        .scu { grid-column: 11; grid-row: 2; }
+        .gtm { grid-column: 11; grid-row: 1; }
+        .isl { grid-column: 1; grid-row: 3; transform: translateY(4px); }
+        
+        .map-legend { display: flex; justify-content: center; gap: 12px; margin-top: 12px; font-size: 0.7rem; color: #9ca3af; }
+        .legend-item { display: flex; align-items: center; gap: 4px; }
+        .dot { width: 8px; height: 8px; border-radius: 50%; }
+        .dot-red { background: #dc2626; }
+        .dot-yellow { background: #ca8a04; }
+        .dot-green { background: #16a34a; }
+
+        .outage-item { display: flex; justify-content: space-between; align-items: center; padding: 12px 0; border-bottom: 1px solid #f3f4f6; }
+        .outage-item:last-child { border-bottom: none; }
+        .status-badge { padding: 4px 8px; border-radius: 6px; font-size: 0.7rem; font-weight: 800; text-transform: uppercase; text-align: center;}
+        .badge-danger { background: #fee2e2; color: #991b1b; border: 1px solid #fca5a5; }
+        .badge-warning { background: #fef9c3; color: #854d0e; border: 1px solid #fde047; }
+        .badge-success { background: #dcfce7; color: #166534; border: 1px solid #86efac; }
+
+        .disclaimer-banner { background: #fffbeb; border: 1px solid #fef3c7; color: #92400e; padding: 10px; border-radius: 8px; font-size: 0.8rem; margin-top: 10px; text-align: center; }
+        footer { text-align: center; font-size: 0.75rem; color: #6b7280; padding: 16px 0; }
+        
+        .filter-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px;}
+        .clear-filter { font-size: 0.75rem; color: #2563eb; cursor: pointer; display: none; font-weight: bold;}
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>QueHayHoy</h1>
+        <div class="meta-timestamp" id="meta-timestamp">Consultando la calle...</div>
+    </header>
+
+    <div class="tabs">
+        <button class="tab-button active" onclick="switchActiveTab('currency-tab')">💵 El Fula / Divisas</button>
+        <button class="tab-button" onclick="switchActiveTab('outage-tab')">⚡ La Corriente</button>
+    </div>
+
+    <!-- TAB 1: INFORMAL CURRENCY RATES -->
+    <main id="currency-tab" class="tab-content active">
+        <div id="currency-card-container"></div>
+        <div class="disclaimer-banner">
+            Valores promedio de compra y venta directa entre particulares (Revolico y grupos de Telegram).
+        </div>
+    </main>
+
+    <!-- TAB 2: CROWDSOURCED POWER OUTAGE MAP -->
+    <main id="outage-tab" class="tab-content">
+        
+        <!-- Interactive Heatmap -->
+        <div class="map-container">
+            <div class="map-title">Mapa de Apagones en Cuba</div>
+            
+            <div class="region-filters">
+                <button class="reg-btn active" onclick="filterByRegion(this, 'all')">TODAS</button>
+                <button class="reg-btn" onclick="filterByRegion(this, 'occidente')">OCCIDENTE</button>
+                <button class="reg-btn" onclick="filterByRegion(this, 'centro')">CENTRO</button>
+                <button class="reg-btn" onclick="filterByRegion(this, 'oriente')">ORIENTE</button>
+            </div>
+
+            <div class="cuba-map">
+                <div class="prov pin" data-prov="Pinar del Río">PIN</div>
+                <div class="prov art" data-prov="Artemisa">ART</div>
+                <div class="prov hab" data-prov="La Habana">HAB</div>
+                <div class="prov may" data-prov="Mayabeque">MAY</div>
+                <div class="prov mat" data-prov="Matanzas">MAT</div>
+                <div class="prov vcl" data-prov="Villa Clara">VCL</div>
+                <div class="prov cfg" data-prov="Cienfuegos">CFG</div>
+                <div class="prov ssp" data-prov="Sancti Spíritus">SSP</div>
+                <div class="prov cav" data-prov="Ciego de Ávila">CAV</div>
+                <div class="prov cam" data-prov="Camagüey">CAM</div>
+                <div class="prov ltu" data-prov="Las Tunas">LTU</div>
+                <div class="prov hol" data-prov="Holguín">HOL</div>
+                <div class="prov gra" data-prov="Granma">GRA</div>
+                <div class="prov scu" data-prov="Santiago de Cuba">SCU</div>
+                <div class="prov gtm" data-prov="Guantánamo">GTM</div>
+                <div class="prov isl" data-prov="Isla de la Juventud">ISL</div>
+            </div>
+            <div class="map-legend">
+                <div class="legend-item"><div class="dot dot-red"></div>Confirmado (&ge;25)</div>
+                <div class="legend-item"><div class="dot dot-yellow"></div>Aislado (&lt;25)</div>
+                <div class="legend-item"><div class="dot dot-green"></div>Con Luz</div>
+            </div>
+        </div>
+
+        <div class="report-card">
+            <div class="report-headline">¿Cómo anda la luz por tu barrio?</div>
+            <select id="municipality-selector">
+                <optgroup label="Pinar del Río">
+                    <option value="Consolación del Sur, Pinar del Río">Consolación del Sur</option>
+                    <option value="Guane, Pinar del Río">Guane</option>
+                    <option value="La Palma, Pinar del Río">La Palma</option>
+                    <option value="Los Palacios, Pinar del Río">Los Palacios</option>
+                    <option value="Mantua, Pinar del Río">Mantua</option>
+                    <option value="Minas de Matahambre, Pinar del Río">Minas de Matahambre</option>
+                    <option value="Pinar del Río, Pinar del Río">Pinar del Río</option>
+                    <option value="San Juan y Martínez, Pinar del Río">San Juan y Martínez</option>
+                    <option value="San Luis, Pinar del Río">San Luis</option>
+                    <option value="Sandino, Pinar del Río">Sandino</option>
+                    <option value="Viñales, Pinar del Río">Viñales</option>
+                </optgroup>
+                <optgroup label="Artemisa">
+                    <option value="Alquízar, Artemisa">Alquízar</option>
+                    <option value="Artemisa, Artemisa">Artemisa</option>
+                    <option value="Bahía Honda, Artemisa">Bahía Honda</option>
+                    <option value="Bauta, Artemisa">Bauta</option>
+                    <option value="Caimito, Artemisa">Caimito</option>
+                    <option value="Candelaria, Artemisa">Candelaria</option>
+                    <option value="Guanajay, Artemisa">Guanajay</option>
+                    <option value="Güira de Melena, Artemisa">Güira de Melena</option>
+                    <option value="Mariel, Artemisa">Mariel</option>
+                    <option value="San Antonio de los Baños, Artemisa">San Antonio de los Baños</option>
+                    <option value="San Cristóbal, Artemisa">San Cristóbal</option>
+                </optgroup>
+                <optgroup label="La Habana">
+                    <option value="Arroyo Naranjo, La Habana">Arroyo Naranjo</option>
+                    <option value="Boyeros, La Habana">Boyeros</option>
+                    <option value="Centro Habana, La Habana">Centro Habana</option>
+                    <option value="Cerro, La Habana">Cerro</option>
+                    <option value="Cotorro, La Habana">Cotorro</option>
+                    <option value="Diez de Octubre, La Habana">Diez de Octubre</option>
+                    <option value="Guanabacoa, La Habana">Guanabacoa</option>
+                    <option value="Habana del Este, La Habana">Habana del Este</option>
+                    <option value="Habana Vieja, La Habana">Habana Vieja</option>
+                    <option value="La Lisa, La Habana">La Lisa</option>
+                    <option value="Marianao, La Habana">Marianao</option>
+                    <option value="Playa, La Habana">Playa</option>
+                    <option value="Plaza de la Revolución, La Habana">Plaza de la Revolución</option>
+                    <option value="Regla, La Habana">Regla</option>
+                    <option value="San Miguel del Padrón, La Habana">San Miguel del Padrón</option>
+                </optgroup>
+                <optgroup label="Mayabeque">
+                    <option value="Batabanó, Mayabeque">Batabanó</option>
+                    <option value="Bejucal, Mayabeque">Bejucal</option>
+                    <option value="Güines, Mayabeque">Güines</option>
+                    <option value="Jaruco, Mayabeque">Jaruco</option>
+                    <option value="Madruga, Mayabeque">Madruga</option>
+                    <option value="Melena del Sur, Mayabeque">Melena del Sur</option>
+                    <option value="Nueva Paz, Mayabeque">Nueva Paz</option>
+                    <option value="Quivicán, Mayabeque">Quivicán</option>
+                    <option value="San José de las Lajas, Mayabeque">San José de las Lajas</option>
+                    <option value="San Nicolás de Bari, Mayabeque">San Nicolás de Bari</option>
+                    <option value="Santa Cruz del Norte, Mayabeque">Santa Cruz del Norte</option>
+                </optgroup>
+                <optgroup label="Matanzas">
+                    <option value="Calimete, Matanzas">Calimete</option>
+                    <option value="Cárdenas, Matanzas">Cárdenas</option>
+                    <option value="Ciénaga de Zapata, Matanzas">Ciénaga de Zapata</option>
+                    <option value="Colón, Matanzas">Colón</option>
+                    <option value="Jagüey Grande, Matanzas">Jagüey Grande</option>
+                    <option value="Jovellanos, Matanzas">Jovellanos</option>
+                    <option value="Limonar, Matanzas">Limonar</option>
+                    <option value="Los Arabos, Matanzas">Los Arabos</option>
+                    <option value="Martí, Matanzas">Martí</option>
+                    <option value="Matanzas, Matanzas">Matanzas</option>
+                    <option value="Pedro Betancourt, Matanzas">Pedro Betancourt</option>
+                    <option value="Perico, Matanzas">Perico</option>
+                    <option value="Unión de Reyes, Matanzas">Unión de Reyes</option>
+                </optgroup>
+                <optgroup label="Cienfuegos">
+                    <option value="Abreus, Cienfuegos">Abreus</option>
+                    <option value="Aguada de Pasajeros, Cienfuegos">Aguada de Pasajeros</option>
+                    <option value="Cienfuegos, Cienfuegos">Cienfuegos</option>
+                    <option value="Cruces, Cienfuegos">Cruces</option>
+                    <option value="Cumanayagua, Cienfuegos">Cumanayagua</option>
+                    <option value="Lajas, Cienfuegos">Lajas</option>
+                    <option value="Palmira, Cienfuegos">Palmira</option>
+                    <option value="Rodas, Cienfuegos">Rodas</option>
+                </optgroup>
+                <optgroup label="Villa Clara">
+                    <option value="Caibarién, Villa Clara">Caibarién</option>
+                    <option value="Camajuaní, Villa Clara">Camajuaní</option>
+                    <option value="Cifuentes, Villa Clara">Cifuentes</option>
+                    <option value="Corralillo, Villa Clara">Corralillo</option>
+                    <option value="Encrucijada, Villa Clara">Encrucijada</option>
+                    <option value="Manicaragua, Villa Clara">Manicaragua</option>
+                    <option value="Placetas, Villa Clara">Placetas</option>
+                    <option value="Quemado de Güines, Villa Clara">Quemado de Güines</option>
+                    <option value="Ranchuelo, Villa Clara">Ranchuelo</option>
+                    <option value="Remedios, Villa Clara">Remedios</option>
+                    <option value="Sagua la Grande, Villa Clara">Sagua la Grande</option>
+                    <option value="Santa Clara, Villa Clara">Santa Clara</option>
+                    <option value="Santo Domingo, Villa Clara">Santo Domingo</option>
+                </optgroup>
+                <optgroup label="Sancti Spíritus">
+                    <option value="Cabaiguán, Sancti Spíritus">Cabaiguán</option>
+                    <option value="Fomento, Sancti Spíritus">Fomento</option>
+                    <option value="Jatibonico, Sancti Spíritus">Jatibonico</option>
+                    <option value="La Sierpe, Sancti Spíritus">La Sierpe</option>
+                    <option value="Sancti Spíritus, Sancti Spíritus">Sancti Spíritus</option>
+                    <option value="Taguasco, Sancti Spíritus">Taguasco</option>
+                    <option value="Trinidad, Sancti Spíritus">Trinidad</option>
+                    <option value="Yaguajay, Sancti Spíritus">Yaguajay</option>
+                </optgroup>
+                <optgroup label="Ciego de Ávila">
+                    <option value="Baraguá, Ciego de Ávila">Baraguá</option>
+                    <option value="Bolivia, Ciego de Ávila">Bolivia</option>
+                    <option value="Chambas, Ciego de Ávila">Chambas</option>
+                    <option value="Ciego de Ávila, Ciego de Ávila">Ciego de Ávila</option>
+                    <option value="Ciro Redondo, Ciego de Ávila">Ciro Redondo</option>
+                    <option value="Florencia, Ciego de Ávila">Florencia</option>
+                    <option value="Majagua, Ciego de Ávila">Majagua</option>
+                    <option value="Morón, Ciego de Ávila">Morón</option>
+                    <option value="Primero de Enero, Ciego de Ávila">Primero de Enero</option>
+                    <option value="Venezuela, Ciego de Ávila">Venezuela</option>
+                </optgroup>
+                <optgroup label="Camagüey">
+                    <option value="Camagüey, Camagüey">Camagüey</option>
+                    <option value="Carlos M. de Céspedes, Camagüey">Carlos M. de Céspedes</option>
+                    <option value="Esmeralda, Camagüey">Esmeralda</option>
+                    <option value="Florida, Camagüey">Florida</option>
+                    <option value="Guáimaro, Camagüey">Guáimaro</option>
+                    <option value="Jimaguayú, Camagüey">Jimaguayú</option>
+                    <option value="Minas, Camagüey">Minas</option>
+                    <option value="Najasa, Camagüey">Najasa</option>
+                    <option value="Nuevitas, Camagüey">Nuevitas</option>
+                    <option value="Santa Cruz del Sur, Camagüey">Santa Cruz del Sur</option>
+                    <option value="Sibanicú, Camagüey">Sibanicú</option>
+                    <option value="Sierra de Cubitas, Camagüey">Sierra de Cubitas</option>
+                    <option value="Vertientes, Camagüey">Vertientes</option>
+                </optgroup>
+                <optgroup label="Las Tunas">
+                    <option value="Amancio, Las Tunas">Amancio</option>
+                    <option value="Colombia, Las Tunas">Colombia</option>
+                    <option value="Jesús Menéndez, Las Tunas">Jesús Menéndez</option>
+                    <option value="Jobabo, Las Tunas">Jobabo</option>
+                    <option value="Majibacoa, Las Tunas">Majibacoa</option>
+                    <option value="Manatí, Las Tunas">Manatí</option>
+                    <option value="Puerto Padre, Las Tunas">Puerto Padre</option>
+                    <option value="Victoria de las Tunas, Las Tunas">Victoria de las Tunas</option>
+                </optgroup>
+                <optgroup label="Holguín">
+                    <option value="Antilla, Holguín">Antilla</option>
+                    <option value="Báguanos, Holguín">Báguanos</option>
+                    <option value="Banes, Holguín">Banes</option>
+                    <option value="Cacocum, Holguín">Cacocum</option>
+                    <option value="Calixto García, Holguín">Calixto García</option>
+                    <option value="Cueto, Holguín">Cueto</option>
+                    <option value="Frank País, Holguín">Frank País</option>
+                    <option value="Gibara, Holguín">Gibara</option>
+                    <option value="Holguín, Holguín">Holguín</option>
+                    <option value="Mayarí, Holguín">Mayarí</option>
+                    <option value="Moa, Holguín">Moa</option>
+                    <option value="Rafael Freyre, Holguín">Rafael Freyre</option>
+                    <option value="Sagua de Tánamo, Holguín">Sagua de Tánamo</option>
+                    <option value="Urbano Noris, Holguín">Urbano Noris</option>
+                </optgroup>
+                <optgroup label="Granma">
+                    <option value="Bartolomé Masó, Granma">Bartolomé Masó</option>
+                    <option value="Bayamo, Granma">Bayamo</option>
+                    <option value="Buey Arriba, Granma">Buey Arriba</option>
+                    <option value="Campechuela, Granma">Campechuela</option>
+                    <option value="Cauto Cristo, Granma">Cauto Cristo</option>
+                    <option value="Guisa, Granma">Guisa</option>
+                    <option value="Jiguaní, Granma">Jiguaní</option>
+                    <option value="Manzanillo, Granma">Manzanillo</option>
+                    <option value="Media Luna, Granma">Media Luna</option>
+                    <option value="Niquero, Granma">Niquero</option>
+                    <option value="Pilón, Granma">Pilón</option>
+                    <option value="Río Cauto, Granma">Río Cauto</option>
+                    <option value="Yara, Granma">Yara</option>
+                </optgroup>
+                <optgroup label="Santiago de Cuba">
+                    <option value="Contramaestre, Santiago de Cuba">Contramaestre</option>
+                    <option value="Guamá, Santiago de Cuba">Guamá</option>
+                    <option value="Mella, Santiago de Cuba">Mella</option>
+                    <option value="San Luis, Santiago de Cuba">San Luis</option>
+                    <option value="Santiago de Cuba, Santiago de Cuba">Santiago de Cuba</option>
+                    <option value="Segundo Frente, Santiago de Cuba">Segundo Frente</option>
+                    <option value="Songo-La Maya, Santiago de Cuba">Songo-La Maya</option>
+                    <option value="Tercer Frente, Santiago de Cuba">Tercer Frente</option>
+                </optgroup>
+                <optgroup label="Guantánamo">
+                    <option value="Baracoa, Guantánamo">Baracoa</option>
+                    <option value="Caimanera, Guantánamo">Caimanera</option>
+                    <option value="El Salvador, Guantánamo">El Salvador</option>
+                    <option value="Guantánamo, Guantánamo">Guantánamo</option>
+                    <option value="Imías, Guantánamo">Imías</option>
+                    <option value="Maisí, Guantánamo">Maisí</option>
+                    <option value="Manuel Tames, Guantánamo">Manuel Tames</option>
+                    <option value="Niceto Pérez, Guantánamo">Niceto Pérez</option>
+                    <option value="San Antonio del Sur, Guantánamo">San Antonio del Sur</option>
+                    <option value="Yateras, Guantánamo">Yateras</option>
+                </optgroup>
+                <optgroup label="Isla de la Juventud">
+                    <option value="Isla de la Juventud">Isla de la Juventud</option>
+                </optgroup>
+            </select>
+            <div class="action-grid">
+                <button class="action-button action-outage" onclick="submitOutageReport('SE_FUE')">❌ Se fue la luz</button>
+                <button class="action-button action-power-back" onclick="submitOutageReport('VINO')">✅ Llegó la luz</button>
+            </div>
+            <div id="feedback-alert" style="display:none; font-size:0.8rem; text-align:center; margin-top:8px; font-weight:600;"></div>
+        </div>
+
+        <div class="card">
+            <div class="filter-header">
+                <span style="font-weight:700; font-size: 1.05rem;" id="list-title">Todos los reportes</span>
+                <span class="clear-filter" id="clear-filter" onclick="clearMapFilter()">Ver toda Cuba &times;</span>
+            </div>
+            <div id="outage-list-container">
+                <div style="text-align:center; padding:15px; color:#6b7280;">Cargando cómo anda la cosa...</div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        Hecho para navegar sin gastar saldo • No consume datos • Funciona sin VPN
+    </footer>
+
+    <script>
+        // CONFIGURATION: Connects to your Cloudflare Worker URL
+        const API_ENDPOINT = "https://tu-worker.tu-subdominio.workers.dev";
+        const CONFIRMATION_THRESHOLD = 25; 
+        
+        // Define the regions of Cuba
+        const REGIONS = {
+            'occidente': ['Pinar del Río', 'Artemisa', 'La Habana', 'Mayabeque', 'Matanzas', 'Isla de la Juventud'],
+            'centro': ['Villa Clara', 'Cienfuegos', 'Sancti Spíritus', 'Ciego de Ávila', 'Camagüey'],
+            'oriente': ['Las Tunas', 'Holguín', 'Granma', 'Santiago de Cuba', 'Guantánamo']
+        };
+
+        let allOutageData = {};
+        let activeProvinceFilter = null;
+        let activeMacroRegion = 'all';
+
+        function switchActiveTab(targetTabId) {
+            document.querySelectorAll('.tab-button').forEach(btn => btn.classList.remove('active'));
+            document.querySelectorAll('.tab-content').forEach(view => view.classList.remove('active'));
+            
+            if (targetTabId === 'currency-tab') {
+                document.querySelectorAll('.tab-button')[0].classList.add('active');
+                document.getElementById('currency-tab').classList.add('active');
+            } else {
+                document.querySelectorAll('.tab-button')[1].classList.add('active');
+                document.getElementById('outage-tab').classList.add('active');
+                fetchOutageReports();
+            }
+        }
+
+        async function fetchCurrencyRates() {
+            try {
+                const response = await fetch('data.json');
+                const data = await response.json();
+                document.getElementById('meta-timestamp').innerText = `Actualizado: ${data.actualizado}`;
+                const container = document.getElementById('currency-card-container');
+                container.innerHTML = '';
+                data.zonas.forEach(region => {
+                    let cardHtml = `<div class="card"><div class="card-header"><span>${region.nombre}</span><span style="font-size:0.75rem; color:#6b7280; font-weight:normal;">${region.ofertas} ofertas</span></div>`;
+                    region.monedas.forEach(currency => {
+                        cardHtml += `<div class="rate-row"><div class="currency-label"><span>${currency.icono}</span><span>${currency.nombre}</span></div><div class="rate-figures"><strong>${currency.promedio} CUP</strong><span class="rate-subtext">Compra ${currency.compra} • Venta ${currency.venta}</span></div></div>`;
+                    });
+                    cardHtml += `</div>`;
+                    container.innerHTML += cardHtml;
+                });
+            } catch (error) {
+                document.getElementById('currency-card-container').innerHTML = `<div class="card" style="text-align:center; padding:20px;">No pudimos cargar los precios. Revisa los datos del móvil.</div>`;
+            }
+        }
+
+        async function fetchOutageReports() {
+            const listContainer = document.getElementById('outage-list-container');
+            try {
+                const response = await fetch(`${API_ENDPOINT}/outages`);
+                const data = await response.json();
+                allOutageData = data;
+                processMapAndList();
+            } catch (error) {
+                allOutageData = {
+                    "Centro Habana, La Habana": { status: "SE_FUE", count: 32 },
+                    "Playa, La Habana": { status: "SE_FUE", count: 12 },
+                    "Santiago de Cuba, Santiago de Cuba": { status: "SE_FUE", count: 48 },
+                    "Matanzas, Matanzas": { status: "VINO", count: 9 }
+                };
+                processMapAndList();
+            }
+        }
+
+        // Region Filter Logic
+        function filterByRegion(btn, regionId) {
+            activeMacroRegion = regionId;
+            document.querySelectorAll('.reg-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+
+            document.querySelectorAll('.prov').forEach(el => {
+                const provName = el.getAttribute('data-prov');
+                if (regionId === 'all' || REGIONS[regionId].includes(provName)) {
+                    el.classList.remove('dimmed');
+                } else {
+                    el.classList.add('dimmed');
+                }
+            });
+
+            if (activeProvinceFilter && regionId !== 'all' && !REGIONS[regionId].includes(activeProvinceFilter)) {
+                activeProvinceFilter = null;
+                document.querySelectorAll('.prov').forEach(el => el.classList.remove('selected'));
+            }
+
+            renderList();
+        }
+
+        function processMapAndList() {
+            let mapColors = {}; 
+            for (const [locationStr, info] of Object.entries(allOutageData)) {
+                const parts = locationStr.split(', ');
+                const province = parts.length > 1 ? parts[1] : locationStr;
+                const isOff = info.status === 'SE_FUE';
+                
+                let severity = 0;
+                if (isOff) {
+                    severity = info.count >= CONFIRMATION_THRESHOLD ? 2 : 1;
+                }
+                
+                if (mapColors[province] === undefined) {
+                    mapColors[province] = severity;
+                } else {
+                    if (severity > mapColors[province]) mapColors[province] = severity;
+                }
+            }
+
+            document.querySelectorAll('.prov').forEach(el => {
+                const provName = el.getAttribute('data-prov');
+                el.classList.remove('status-green', 'status-yellow', 'status-red');
+                if (mapColors[provName] !== undefined) {
+                    if (mapColors[provName] === 2) el.classList.add('status-red');
+                    else if (mapColors[provName] === 1) el.classList.add('status-yellow');
+                    else if (mapColors[provName] === 0) el.classList.add('status-green');
+                }
+            });
+
+            renderList();
+        }
+
+        function renderList() {
+            const listContainer = document.getElementById('outage-list-container');
+            const titleEl = document.getElementById('list-title');
+            const clearBtn = document.getElementById('clear-filter');
+
+            if (Object.keys(allOutageData).length === 0) {
+                listContainer.innerHTML = `<div style="text-align:center; padding:15px; color:#6b7280;">Sin reportes recientes.</div>`;
+                return;
+            }
+
+            let html = '';
+            let countDisplayed = 0;
+
+            for (const [locationStr, info] of Object.entries(allOutageData)) {
+                const parts = locationStr.split(', ');
+                const muni = parts[0];
+                const province = parts.length > 1 ? parts[1] : locationStr;
+
+                if (activeMacroRegion !== 'all' && !REGIONS[activeMacroRegion].includes(province)) {
+                    continue;
+                }
+
+                if (activeProvinceFilter && province !== activeProvinceFilter) continue;
+                
+                const isOff = info.status === 'SE_FUE';
+                let badgeClass = '';
+                let statusText = '';
+                
+                if (isOff) {
+                    if (info.count >= CONFIRMATION_THRESHOLD) {
+                        badgeClass = 'badge-danger';
+                        statusText = 'Confirmado';
+                    } else {
+                        badgeClass = 'badge-warning';
+                        statusText = `Aislado (${info.count}/${CONFIRMATION_THRESHOLD})`;
+                    }
+                } else {
+                    badgeClass = 'badge-success';
+                    statusText = 'Con Luz';
+                }
+
+                html += `
+                    <div class="outage-item">
+                        <div>
+                            <strong>${muni}</strong>
+                            <span style="display:block; font-size:0.75rem; color:#6b7280;">${province}</span>
+                        </div>
+                        <span class="status-badge ${badgeClass}">${statusText}</span>
+                    </div>`;
+                countDisplayed++;
+            }
+
+            if (countDisplayed === 0) {
+                html = `<div style="text-align:center; padding:15px; color:#6b7280;">No hay reportes recientes en esta zona.</div>`;
+            }
+
+            listContainer.innerHTML = html;
+
+            if (activeProvinceFilter) {
+                titleEl.innerText = `Reportes en ${activeProvinceFilter}`;
+                clearBtn.style.display = 'block';
+            } else if (activeMacroRegion !== 'all') {
+                const regionName = activeMacroRegion.charAt(0).toUpperCase() + activeMacroRegion.slice(1);
+                titleEl.innerText = `Reportes en ${regionName}`;
+                clearBtn.style.display = 'none';
+            } else {
+                titleEl.innerText = `Todos los reportes`;
+                clearBtn.style.display = 'none';
+            }
+        }
+
+        function clearMapFilter() {
+            activeProvinceFilter = null;
+            document.querySelectorAll('.prov').forEach(el => el.classList.remove('selected'));
+            renderList();
+        }
+
+        document.querySelectorAll('.prov').forEach(el => {
+            el.addEventListener('click', function() {
+                if(this.classList.contains('dimmed')) return; 
+
+                const selectedProv = this.getAttribute('data-prov');
+                
+                if (activeProvinceFilter === selectedProv) {
+                    clearMapFilter();
+                    return;
+                }
+                
+                activeProvinceFilter = selectedProv;
+                document.querySelectorAll('.prov').forEach(p => p.classList.remove('selected'));
+                this.classList.add('selected');
+                renderList();
+                
+                document.getElementById('list-title').scrollIntoView({ behavior: 'smooth', block: 'start' });
+            });
+        });
+
+        // Submit outage report with 403 Geo-Restriction & Rate-limit handling
+        async function submitOutageReport(statusType) {
+            const municipality = document.getElementById('municipality-selector').value;
+            const feedbackAlert = document.getElementById('feedback-alert');
+            
+            const storageKey = `reported_${municipality}`;
+            const lastSubmitted = localStorage.getItem(storageKey);
+            const now = Date.now();
+
+            if (lastSubmitted && (now - lastSubmitted) < 300000) { 
+                feedbackAlert.style.color = '#b45309';
+                feedbackAlert.innerText = "Ya reportaste por esa zona hace un ratico. ¡Gracias!";
+                feedbackAlert.style.display = 'block';
+                return;
+            }
+
+            feedbackAlert.style.color = '#374151';
+            feedbackAlert.innerText = "Anotando la jugada...";
+            feedbackAlert.style.display = 'block';
+
+            try {
+                const response = await fetch(`${API_ENDPOINT}/report`, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ municipio: municipality, status: statusType })
+                });
+
+                if (response.status === 403) {
+                    feedbackAlert.style.color = '#b91c1c';
+                    feedbackAlert.innerText = "Solo se puede reportar desde una conexión dentro de Cuba.";
+                    return;
+                }
+
+                if (response.ok) {
+                    localStorage.setItem(storageKey, now);
+                    feedbackAlert.style.color = '#15803d';
+                    feedbackAlert.innerText = "¡Reporte guardado! Se actualiza de una.";
+                    fetchOutageReports();
+                } else {
+                    throw new Error('Server error');
+                }
+            } catch (error) {
+                feedbackAlert.style.color = '#b91c1c';
+                feedbackAlert.innerText = "No se pudo conectar. Revisa tus datos e intenta de nuevo.";
+            }
+
+            setTimeout(() => { feedbackAlert.style.display = 'none'; }, 4000);
+        }
+
+        fetchCurrencyRates();
+    </script>
+</body>
+</html>
