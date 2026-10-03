@@ -464,7 +464,7 @@
 
         async function fetchCurrencyRates() {
             try {
-                const response = await fetch('data.json');
+                const response = await fetch(`data.json?t=${Date.now()}`);
                 const data = await response.json();
                 document.getElementById('meta-timestamp').innerText = `Actualizado: ${data.actualizado}`;
                 const container = document.getElementById('currency-card-container');
