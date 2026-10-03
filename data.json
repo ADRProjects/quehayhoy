@@ -1,70 +1,70 @@
 {
-  "actualizado": "03 de October, 04:14 AM",
+  "actualizado": "03 de October, 06:12 AM",
   "zonas": [
     {
       "nombre": "La Habana",
-      "ofertas": 16,
+      "ofertas": 88,
       "monedas": [
         {
           "nombre": "USD (Billete)",
           "icono": "💵",
-          "compra": 314,
-          "venta": 319,
-          "promedio": 316
+          "compra": 517,
+          "venta": 522,
+          "promedio": 519
         },
         {
           "nombre": "MLC (Transferencia)",
           "icono": "💳",
-          "compra": 268,
-          "venta": 272,
-          "promedio": 270
+          "compra": 500,
+          "venta": 504,
+          "promedio": 502
         },
         {
           "nombre": "Euro",
           "icono": "💶",
-          "compra": 331,
-          "venta": 337,
-          "promedio": 333
+          "compra": 445,
+          "venta": 451,
+          "promedio": 447
         }
       ]
     },
     {
       "nombre": "Centro (Villa Clara, Sancti Spíritus, Cienfuegos)",
-      "ofertas": 8,
+      "ofertas": 44,
       "monedas": [
         {
           "nombre": "USD (Billete)",
           "icono": "💵",
-          "compra": 313,
-          "venta": 318,
-          "promedio": 315
+          "compra": 516,
+          "venta": 521,
+          "promedio": 518
         },
         {
           "nombre": "MLC (Transferencia)",
           "icono": "💳",
-          "compra": 268,
-          "venta": 272,
-          "promedio": 269
+          "compra": 500,
+          "venta": 504,
+          "promedio": 501
         }
       ]
     },
     {
       "nombre": "Oriente (Santiago, Holguín, Granma)",
-      "ofertas": 5,
+      "ofertas": 29,
       "monedas": [
         {
           "nombre": "USD (Billete)",
           "icono": "💵",
-          "compra": 311,
-          "venta": 316,
-          "promedio": 313
+          "compra": 514,
+          "venta": 519,
+          "promedio": 516
         },
         {
           "nombre": "MLC (Transferencia)",
           "icono": "💳",
-          "compra": 267,
-          "venta": 271,
-          "promedio": 268
+          "compra": 499,
+          "venta": 503,
+          "promedio": 500
         }
       ]
     }
