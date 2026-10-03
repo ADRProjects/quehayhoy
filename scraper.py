@@ -34,14 +34,16 @@ def get_average_price(query, min_val, max_val):
         return None, 0
 
 # 1. Scrape real-time averages (filtering out fake 1 CUP or 999 CUP posts)
-usd_price, usd_count = get_average_price("vendo+usd", 280, 360)
-mlc_price, mlc_count = get_average_price("vendo+mlc", 240, 300)
-eur_price, eur_count = get_average_price("vendo+euro", 300, 380)
+# 1. Scrape real-time averages (filtering out fake 1-100 CUP spam posts)
+usd_price, usd_count = get_average_price("vendo+usd", 250, 1500)
+mlc_price, mlc_count = get_average_price("vendo+mlc", 250, 1500)
+eur_price, eur_count = get_average_price("vendo+euro", 250, 1500)
 
 # If scraping fails for some reason, we keep a fallback baseline so the site doesn't break
-usd_price = usd_price or 320
-mlc_price = mlc_price or 270
-eur_price = eur_price or 330
+# If scraping fails for some reason, we keep a fallback baseline so the site doesn't break
+usd_price = usd_price or 760
+mlc_price = mlc_price or 700
+eur_price = eur_price or 780
 total_offers = usd_count + mlc_count + eur_count or 150
 
 # 2. Build the new JSON data structure
