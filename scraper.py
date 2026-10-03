@@ -35,9 +35,14 @@ def get_average_price(query, min_val, max_val):
 
 # 1. Scrape real-time averages (filtering out fake 1 CUP or 999 CUP posts)
 # 1. Scrape real-time averages (filtering out fake 1-100 CUP spam posts)
-usd_price, usd_count = get_average_price("vendo+usd", 250, 1500)
-mlc_price, mlc_count = get_average_price("vendo+mlc", 250, 1500)
-eur_price, eur_count = get_average_price("vendo+euro", 250, 1500)
+# USD is ~775. This range ignores people selling "$300" or "$1000"
+usd_price, usd_count = get_average_price("vendo+usd", 650, 900)
+
+# MLC is ~489. This range ignores small amounts
+mlc_price, mlc_count = get_average_price("vendo+mlc", 400, 600)
+
+# Euro is ~870. This range ignores people selling "$500"
+eur_price, eur_count = get_average_price("vendo+euro", 750, 1000)
 
 # If scraping fails for some reason, we keep a fallback baseline so the site doesn't break
 # If scraping fails for some reason, we keep a fallback baseline so the site doesn't break
