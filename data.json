@@ -1,29 +1,71 @@
 {
-  "actualizado": "Hoy a las 9:30 AM",
+  "actualizado": "02 de October, 11:39 PM",
   "zonas": [
     {
       "nombre": "La Habana",
-      "ofertas": 312,
+      "ofertas": 17,
       "monedas": [
-        { "nombre": "USD (Billete)", "icono": "💵", "compra": 320, "venta": 325, "promedio": 322 },
-        { "nombre": "MLC (Transferencia)", "icono": "💳", "compra": 268, "venta": 272, "promedio": 270 },
-        { "nombre": "Euro", "icono": "💶", "compra": 330, "venta": 338, "promedio": 334 }
+        {
+          "nombre": "USD (Billete)",
+          "icono": "💵",
+          "compra": 314,
+          "venta": 319,
+          "promedio": 316
+        },
+        {
+          "nombre": "MLC (Transferencia)",
+          "icono": "💳",
+          "compra": 268,
+          "venta": 272,
+          "promedio": 270
+        },
+        {
+          "nombre": "Euro",
+          "icono": "💶",
+          "compra": 326,
+          "venta": 332,
+          "promedio": 328
+        }
       ]
     },
     {
       "nombre": "Centro (Villa Clara, Sancti Spíritus, Cienfuegos)",
-      "ofertas": 185,
+      "ofertas": 8,
       "monedas": [
-        { "nombre": "USD (Billete)", "icono": "💵", "compra": 316, "venta": 322, "promedio": 319 },
-        { "nombre": "MLC (Transferencia)", "icono": "💳", "compra": 266, "venta": 271, "promedio": 268 }
+        {
+          "nombre": "USD (Billete)",
+          "icono": "💵",
+          "compra": 313,
+          "venta": 318,
+          "promedio": 315
+        },
+        {
+          "nombre": "MLC (Transferencia)",
+          "icono": "💳",
+          "compra": 268,
+          "venta": 272,
+          "promedio": 269
+        }
       ]
     },
     {
       "nombre": "Oriente (Santiago, Holguín, Granma)",
-      "ofertas": 210,
+      "ofertas": 5,
       "monedas": [
-        { "nombre": "USD (Billete)", "icono": "💵", "compra": 315, "venta": 320, "promedio": 317 },
-        { "nombre": "MLC (Transferencia)", "icono": "💳", "compra": 265, "venta": 270, "promedio": 267 }
+        {
+          "nombre": "USD (Billete)",
+          "icono": "💵",
+          "compra": 311,
+          "venta": 316,
+          "promedio": 313
+        },
+        {
+          "nombre": "MLC (Transferencia)",
+          "icono": "💳",
+          "compra": 267,
+          "venta": 271,
+          "promedio": 268
+        }
       ]
     }
   ]
