@@ -1,9 +1,9 @@
 {
-  "actualizado": "02 de October, 11:39 PM",
+  "actualizado": "03 de October, 12:15 AM",
   "zonas": [
     {
       "nombre": "La Habana",
-      "ofertas": 17,
+      "ofertas": 12,
       "monedas": [
         {
           "nombre": "USD (Billete)",
@@ -30,7 +30,7 @@
     },
     {
       "nombre": "Centro (Villa Clara, Sancti Spíritus, Cienfuegos)",
-      "ofertas": 8,
+      "ofertas": 6,
       "monedas": [
         {
           "nombre": "USD (Billete)",
@@ -50,7 +50,7 @@
     },
     {
       "nombre": "Oriente (Santiago, Holguín, Granma)",
-      "ofertas": 5,
+      "ofertas": 4,
       "monedas": [
         {
           "nombre": "USD (Billete)",
