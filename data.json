@@ -1,70 +1,70 @@
 {
-  "actualizado": "03 de October, 10:58 AM",
+  "actualizado": "03 de October, 03:19 PM",
   "zonas": [
     {
       "nombre": "La Habana",
-      "ofertas": 88,
-      "monedas": [
-        {
-          "nombre": "USD (Billete)",
-          "icono": "💵",
-          "compra": 517,
-          "venta": 522,
-          "promedio": 519
-        },
-        {
-          "nombre": "MLC (Transferencia)",
-          "icono": "💳",
-          "compra": 500,
-          "venta": 504,
-          "promedio": 502
-        },
-        {
-          "nombre": "Euro",
-          "icono": "💶",
-          "compra": 445,
-          "venta": 451,
-          "promedio": 447
-        }
-      ]
-    },
-    {
-      "nombre": "Centro (Villa Clara, Sancti Spíritus, Cienfuegos)",
-      "ofertas": 44,
-      "monedas": [
-        {
-          "nombre": "USD (Billete)",
-          "icono": "💵",
-          "compra": 516,
-          "venta": 521,
-          "promedio": 518
-        },
-        {
-          "nombre": "MLC (Transferencia)",
-          "icono": "💳",
-          "compra": 500,
-          "venta": 504,
-          "promedio": 501
-        }
-      ]
-    },
-    {
-      "nombre": "Oriente (Santiago, Holguín, Granma)",
       "ofertas": 29,
       "monedas": [
         {
           "nombre": "USD (Billete)",
           "icono": "💵",
-          "compra": 514,
-          "venta": 519,
-          "promedio": 516
+          "compra": 756,
+          "venta": 761,
+          "promedio": 758
         },
         {
           "nombre": "MLC (Transferencia)",
           "icono": "💳",
-          "compra": 499,
-          "venta": 503,
-          "promedio": 500
+          "compra": 531,
+          "venta": 535,
+          "promedio": 533
+        },
+        {
+          "nombre": "Euro",
+          "icono": "💶",
+          "compra": 793,
+          "venta": 799,
+          "promedio": 795
+        }
+      ]
+    },
+    {
+      "nombre": "Centro (Villa Clara, Sancti Spíritus, Cienfuegos)",
+      "ofertas": 14,
+      "monedas": [
+        {
+          "nombre": "USD (Billete)",
+          "icono": "💵",
+          "compra": 755,
+          "venta": 760,
+          "promedio": 757
+        },
+        {
+          "nombre": "MLC (Transferencia)",
+          "icono": "💳",
+          "compra": 531,
+          "venta": 535,
+          "promedio": 532
+        }
+      ]
+    },
+    {
+      "nombre": "Oriente (Santiago, Holguín, Granma)",
+      "ofertas": 9,
+      "monedas": [
+        {
+          "nombre": "USD (Billete)",
+          "icono": "💵",
+          "compra": 753,
+          "venta": 758,
+          "promedio": 755
+        },
+        {
+          "nombre": "MLC (Transferencia)",
+          "icono": "💳",
+          "compra": 530,
+          "venta": 534,
+          "promedio": 531
         }
       ]
     }
