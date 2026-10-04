@@ -1,9 +1,9 @@
 {
-  "actualizado": "03 de October, 10:52 PM",
+  "actualizado": "04 de October, 01:43 AM",
   "zonas": [
     {
       "nombre": "La Habana",
-      "ofertas": 30,
+      "ofertas": 31,
       "monedas": [
         {
           "nombre": "USD (Billete)",
@@ -22,9 +22,9 @@
         {
           "nombre": "Euro",
           "icono": "💶",
-          "compra": 793,
-          "venta": 799,
-          "promedio": 795
+          "compra": 778,
+          "venta": 784,
+          "promedio": 780
         }
       ]
     },
