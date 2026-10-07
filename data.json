@@ -1,5 +1,5 @@
 {
-  "actualizado": "07 de October, 12:14 AM",
+  "actualizado": "07 de October, 02:17 AM",
   "zonas": [
     {
       "nombre": "La Habana",
@@ -22,9 +22,9 @@
         {
           "nombre": "Euro",
           "icono": "💶",
-          "compra": 793,
-          "venta": 799,
-          "promedio": 795
+          "compra": 773,
+          "venta": 779,
+          "promedio": 775
         }
       ]
     },
