@@ -1,9 +1,9 @@
 {
-  "actualizado": "10 de October, 06:11 PM",
+  "actualizado": "10 de October, 08:20 PM",
   "zonas": [
     {
       "nombre": "La Habana",
-      "ofertas": 26,
+      "ofertas": 27,
       "monedas": [
         {
           "nombre": "USD (Billete)",
@@ -22,9 +22,9 @@
         {
           "nombre": "Euro",
           "icono": "💶",
-          "compra": 798,
-          "venta": 804,
-          "promedio": 800
+          "compra": 773,
+          "venta": 779,
+          "promedio": 775
         }
       ]
     },
@@ -50,7 +50,7 @@
     },
     {
       "nombre": "Oriente (Santiago, Holguín, Granma)",
-      "ofertas": 8,
+      "ofertas": 9,
       "monedas": [
         {
           "nombre": "USD (Billete)",
