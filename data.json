@@ -1,9 +1,9 @@
 {
-  "actualizado": "26 de October, 12:29 AM",
+  "actualizado": "26 de October, 02:35 AM",
   "zonas": [
     {
       "nombre": "La Habana",
-      "ofertas": 25,
+      "ofertas": 26,
       "monedas": [
         {
           "nombre": "USD (Billete)",
@@ -22,15 +22,15 @@
         {
           "nombre": "Euro",
           "icono": "💶",
-          "compra": 848,
-          "venta": 854,
-          "promedio": 850
+          "compra": 864,
+          "venta": 870,
+          "promedio": 866
         }
       ]
     },
     {
       "nombre": "Centro (Villa Clara, Sancti Spíritus, Cienfuegos)",
-      "ofertas": 12,
+      "ofertas": 13,
       "monedas": [
         {
           "nombre": "USD (Billete)",
