@@ -1,23 +1,23 @@
 {
-  "actualizado": "27 de October, 10:39 PM",
+  "actualizado": "28 de October, 12:37 AM",
   "zonas": [
     {
       "nombre": "La Habana",
-      "ofertas": 25,
+      "ofertas": 22,
       "monedas": [
         {
           "nombre": "USD (Billete)",
           "icono": "💵",
-          "compra": 743,
-          "venta": 748,
-          "promedio": 745
+          "compra": 773,
+          "venta": 778,
+          "promedio": 775
         },
         {
           "nombre": "MLC (Transferencia)",
           "icono": "💳",
-          "compra": 526,
-          "venta": 530,
-          "promedio": 528
+          "compra": 525,
+          "venta": 529,
+          "promedio": 527
         },
         {
           "nombre": "Euro",
@@ -30,34 +30,14 @@
     },
     {
       "nombre": "Centro (Villa Clara, Sancti Spíritus, Cienfuegos)",
-      "ofertas": 12,
+      "ofertas": 11,
       "monedas": [
         {
           "nombre": "USD (Billete)",
           "icono": "💵",
-          "compra": 742,
-          "venta": 747,
-          "promedio": 744
-        },
-        {
-          "nombre": "MLC (Transferencia)",
-          "icono": "💳",
-          "compra": 526,
-          "venta": 530,
-          "promedio": 527
-        }
-      ]
-    },
-    {
-      "nombre": "Oriente (Santiago, Holguín, Granma)",
-      "ofertas": 8,
-      "monedas": [
-        {
-          "nombre": "USD (Billete)",
-          "icono": "💵",
-          "compra": 740,
-          "venta": 745,
-          "promedio": 742
+          "compra": 772,
+          "venta": 777,
+          "promedio": 774
         },
         {
           "nombre": "MLC (Transferencia)",
@@ -65,6 +45,26 @@
           "compra": 525,
           "venta": 529,
           "promedio": 526
+        }
+      ]
+    },
+    {
+      "nombre": "Oriente (Santiago, Holguín, Granma)",
+      "ofertas": 7,
+      "monedas": [
+        {
+          "nombre": "USD (Billete)",
+          "icono": "💵",
+          "compra": 770,
+          "venta": 775,
+          "promedio": 772
+        },
+        {
+          "nombre": "MLC (Transferencia)",
+          "icono": "💳",
+          "compra": 524,
+          "venta": 528,
+          "promedio": 525
         }
       ]
     }
