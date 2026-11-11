@@ -1,23 +1,23 @@
 {
-  "actualizado": "11 de November, 09:46 AM",
+  "actualizado": "11 de November, 05:06 PM",
   "zonas": [
     {
       "nombre": "La Habana",
-      "ofertas": 31,
+      "ofertas": 33,
       "monedas": [
         {
           "nombre": "USD (Billete)",
           "icono": "💵",
-          "compra": 724,
-          "venta": 729,
-          "promedio": 726
+          "compra": 736,
+          "venta": 741,
+          "promedio": 738
         },
         {
           "nombre": "MLC (Transferencia)",
           "icono": "💳",
-          "compra": 519,
-          "venta": 523,
-          "promedio": 521
+          "compra": 522,
+          "venta": 526,
+          "promedio": 524
         },
         {
           "nombre": "Euro",
@@ -30,41 +30,41 @@
     },
     {
       "nombre": "Centro (Villa Clara, Sancti Spíritus, Cienfuegos)",
-      "ofertas": 15,
+      "ofertas": 16,
       "monedas": [
         {
           "nombre": "USD (Billete)",
           "icono": "💵",
-          "compra": 723,
-          "venta": 728,
-          "promedio": 725
+          "compra": 735,
+          "venta": 740,
+          "promedio": 737
         },
         {
           "nombre": "MLC (Transferencia)",
           "icono": "💳",
-          "compra": 519,
-          "venta": 523,
-          "promedio": 520
+          "compra": 522,
+          "venta": 526,
+          "promedio": 523
         }
       ]
     },
     {
       "nombre": "Oriente (Santiago, Holguín, Granma)",
-      "ofertas": 10,
+      "ofertas": 11,
       "monedas": [
         {
           "nombre": "USD (Billete)",
           "icono": "💵",
-          "compra": 721,
-          "venta": 726,
-          "promedio": 723
+          "compra": 733,
+          "venta": 738,
+          "promedio": 735
         },
         {
           "nombre": "MLC (Transferencia)",
           "icono": "💳",
-          "compra": 518,
-          "venta": 522,
-          "promedio": 519
+          "compra": 521,
+          "venta": 525,
+          "promedio": 522
         }
       ]
     }
