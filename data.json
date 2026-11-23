@@ -1,9 +1,9 @@
 {
-  "actualizado": "23 de November, 02:29 AM",
+  "actualizado": "23 de November, 03:56 PM",
   "zonas": [
     {
       "nombre": "La Habana",
-      "ofertas": 31,
+      "ofertas": 32,
       "monedas": [
         {
           "nombre": "USD (Billete)",
@@ -15,9 +15,9 @@
         {
           "nombre": "MLC (Transferencia)",
           "icono": "💳",
-          "compra": 522,
-          "venta": 526,
-          "promedio": 524
+          "compra": 521,
+          "venta": 525,
+          "promedio": 523
         },
         {
           "nombre": "Euro",
@@ -30,7 +30,7 @@
     },
     {
       "nombre": "Centro (Villa Clara, Sancti Spíritus, Cienfuegos)",
-      "ofertas": 15,
+      "ofertas": 16,
       "monedas": [
         {
           "nombre": "USD (Billete)",
@@ -42,9 +42,9 @@
         {
           "nombre": "MLC (Transferencia)",
           "icono": "💳",
-          "compra": 522,
-          "venta": 526,
-          "promedio": 523
+          "compra": 521,
+          "venta": 525,
+          "promedio": 522
         }
       ]
     },
@@ -62,9 +62,9 @@
         {
           "nombre": "MLC (Transferencia)",
           "icono": "💳",
-          "compra": 521,
-          "venta": 525,
-          "promedio": 522
+          "compra": 520,
+          "venta": 524,
+          "promedio": 521
         }
       ]
     }
