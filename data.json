@@ -1,16 +1,16 @@
 {
-  "actualizado": "24 de November, 12:41 AM",
+  "actualizado": "24 de November, 01:10 PM",
   "zonas": [
     {
       "nombre": "La Habana",
-      "ofertas": 32,
+      "ofertas": 33,
       "monedas": [
         {
           "nombre": "USD (Billete)",
           "icono": "💵",
-          "compra": 730,
-          "venta": 735,
-          "promedio": 732
+          "compra": 764,
+          "venta": 769,
+          "promedio": 766
         },
         {
           "nombre": "MLC (Transferencia)",
@@ -35,9 +35,9 @@
         {
           "nombre": "USD (Billete)",
           "icono": "💵",
-          "compra": 729,
-          "venta": 734,
-          "promedio": 731
+          "compra": 763,
+          "venta": 768,
+          "promedio": 765
         },
         {
           "nombre": "MLC (Transferencia)",
@@ -50,14 +50,14 @@
     },
     {
       "nombre": "Oriente (Santiago, Holguín, Granma)",
-      "ofertas": 10,
+      "ofertas": 11,
       "monedas": [
         {
           "nombre": "USD (Billete)",
           "icono": "💵",
-          "compra": 727,
-          "venta": 732,
-          "promedio": 729
+          "compra": 761,
+          "venta": 766,
+          "promedio": 763
         },
         {
           "nombre": "MLC (Transferencia)",
