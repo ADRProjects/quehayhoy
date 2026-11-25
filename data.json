@@ -1,5 +1,5 @@
 {
-  "actualizado": "24 de November, 09:59 PM",
+  "actualizado": "25 de November, 07:09 AM",
   "zonas": [
     {
       "nombre": "La Habana",
@@ -8,16 +8,16 @@
         {
           "nombre": "USD (Billete)",
           "icono": "💵",
-          "compra": 755,
-          "venta": 760,
-          "promedio": 757
+          "compra": 764,
+          "venta": 769,
+          "promedio": 766
         },
         {
           "nombre": "MLC (Transferencia)",
           "icono": "💳",
-          "compra": 521,
-          "venta": 525,
-          "promedio": 523
+          "compra": 522,
+          "venta": 526,
+          "promedio": 524
         },
         {
           "nombre": "Euro",
@@ -35,16 +35,16 @@
         {
           "nombre": "USD (Billete)",
           "icono": "💵",
-          "compra": 754,
-          "venta": 759,
-          "promedio": 756
+          "compra": 763,
+          "venta": 768,
+          "promedio": 765
         },
         {
           "nombre": "MLC (Transferencia)",
           "icono": "💳",
-          "compra": 521,
-          "venta": 525,
-          "promedio": 522
+          "compra": 522,
+          "venta": 526,
+          "promedio": 523
         }
       ]
     },
@@ -55,16 +55,16 @@
         {
           "nombre": "USD (Billete)",
           "icono": "💵",
-          "compra": 752,
-          "venta": 757,
-          "promedio": 754
+          "compra": 761,
+          "venta": 766,
+          "promedio": 763
         },
         {
           "nombre": "MLC (Transferencia)",
           "icono": "💳",
-          "compra": 520,
-          "venta": 524,
-          "promedio": 521
+          "compra": 521,
+          "venta": 525,
+          "promedio": 522
         }
       ]
     }
